@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#170d16">
+  <title>VIANA — دنیای ارتباط تو</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-theme="cherry">
+
+<div class="app-shell">
+
+  <aside class="rail">
+    <div class="brand-mark" title="VIANA">
+      <span class="brand-glyph">v</span>
+    </div>
+
+    <button class="rail-btn active" data-page="messenger" title="پیام‌رسان"><span>◈</span></button>
+    <button class="rail-btn" data-page="world" title="ویانا ورلد"><span>◎</span></button>
+    <button class="rail-btn" data-page="market" title="ویانا مارکت"><span>◇</span></button>
+
+    <div class="rail-spacer"></div>
+
+    <button class="rail-btn" data-page="settings" title="تنظیمات"><span>⚙</span></button>
+    <div class="rail-avatar">D</div>
+  </aside>
+
+  <main class="workspace">
+
+    <header class="topbar">
+      <div class="top-brand">
+        <div class="brand-mini">v</div>
+        <div>
+          <strong>VIANA</strong>
+          <small>دنیای ارتباط تو</small>
+        </div>
+      </div>
+
+      <div class="top-context">
+        <span class="live-dot"></span>
+        <span id="topContext">پیام‌رسان</span>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-btn" id="searchToggle" title="جستجو">⌕</button>
+        <button class="icon-btn" id="quickTheme" title="تغییر تم">◐</button>
+        <button class="icon-btn notification-btn" title="اعلان‌ها">♧<i></i></button>
+
+        <button class="profile-chip" id="openMyProfile">
+          <span class="my-avatar">D</span>
+          <span>دنیـا</span>
+          <b>⌄</b>
+        </button>
+      </div>
+    </header>
+
+    <!-- MESSENGER -->
+
+    <section class="page active" id="page-messenger">
+
+      <div class="messenger-layout">
+
+        <section class="conversation-panel panel">
+
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">YOUR SPACE</p>
+              <h1>گفت‌وگوها</h1>
+            </div>
+
+            <button class="round-action" id="newChat" title="گفت‌وگوی جدید">＋</button>
+          </div>
+
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input id="chatSearch" placeholder="جست‌وجوی گفتگو، مخاطب..." autocomplete="off">
+            <kbd>⌘ K</kbd>
+          </div>
+
+          <div class="filter-row">
+            <button class="filter active" data-filter="all">همه <b>۸</b></button>
+            <button class="filter" data-filter="unread">خوانده‌نشده</button>
+            <button class="filter" data-filter="personal">شخصی</button>
+            <button class="filter" data-filter="groups">گروه‌ها</button>
+          </div>
+
+          <div class="section-caption">
+            <span>گفت‌وگوهای اخیر</span>
+            <button class="text-action">مرتب‌سازی ↕</button>
+          </div>
+
+          <div class="chat-list" id="chatList">
+
+            <button class="chat-item selected" data-chat="sara" data-kind="personal">
+              <div class="avatar a-rose">س<span class="online"></span></div>
+              <div class="chat-meta">
+                <div class="chat-line">
+                  <strong>سارا محمدی</strong>
+                  <time>۱۰:۴۲</time>
+                </div>
+                <div class="chat-line">
+                  <p>اون تم جدید رو دیدی؟ خیلی قشنگه ✨</p>
+                  <span class="unread-count">2</span>
+                </div>
+              </div>
+            </button>
+
+            <button class="chat-item" data-chat="design" data-kind="groups">
+              <div class="avatar a-violet">✦</div>
+              <div class="chat-meta">
+                <div class="chat-line">
+                  <strong>تیم طراحی ویانا</strong>
+                  <time>۰۹:۱۸</time>
+                </div>
+                <div class="chat-line">
+                  <p>مریم: فایل‌ها رو آپلود کردم</p>
+                  <span class="mute">♧</span>
+                </div>
+              </div>
+            </button>
+
+            <button class="chat-item" data-chat="armin" data-kind="personal">
+              <div class="avatar a-blue">آ<span class="online"></span></div>
+              <div class="chat-meta">
+                <div class="chat-line">
+                  <strong>آرمین رضایی</strong>
+                  <time>دیروز</time>
+                </div>
+                <div class="chat-line">
+                  <p>ویس فرستاد <span class="voice-mini">▰▰▱▰▰▱</span></p>
+                </div>
+              </div>
+            </button>
+
+            <button class="chat-item" data-chat="family" data-kind="groups">
+              <div class="avatar a-peach">♡</div>
+              <div class="chat-meta">
+                <div class="chat-line">
+                  <strong>خانواده 💗</strong>
+                  <time>دیروز</time>
+                </div>
+                <div class="chat-line">
+                  <p>مامان: مراقب خودت باش عزیزم</p>
+                </div>
+              </div>
+            </button>
+
+            <button class="chat-item" data-chat="nilo" data-kind="personal">
+              <div class="avatar a-green">ن</div>
+              <div class="chat-meta">
+                <div class="chat-line">
+                  <strong>نیلوفر</strong>
+                  <time>سه‌شنبه</time>
+                </div>
+                <div class="chat-line">
+                  <p>عکس رو برات فرستادم</p>
+                </div>
+              </div>
+            </button>
+
+            <button class="chat-item" data-chat="book" data-kind="groups">
+              <div class="avatar a-gold">✧</div>
+              <div class="chat-meta">
+                <div class="chat-line">
+                  <strong>باشگاه کتاب‌خوانی</strong>
+                  <time>دوشنبه</time>
+                </div>
+                <div class="chat-line">
+                  <p>جلسه بعدی پنجشنبه 🌿</p>
+                </div>
+              </div>
+            </button>
+
+          </div>
+
+          <div class="panel-bottom">
+            <div class="storage-line">
+              <span>فضای شخصی تو</span>
+              <span>۲.۴ از ۱۰ گیگابایت</span>
+            </div>
+            <div class="storage-bar"><i></i></div>
+          </div>
+
+        </section>
+
+        <!-- CHAT PANEL -->
+
+        <section class="chat-panel panel" id="chatPanel">
+
+          <div class="chat-header">
+            <div class="contact-summary">
+              <div class="avatar a-rose large">س<span class="online"></span></div>
+
+              <div>
+                <h2 id="contactName">سارا محمدی</h2>
+                <p id="contactStatus">
+                  <span class="live-dot"></span>
+                  آنلاین · آخرین بازدید همین الان
+                </p>
+              </div>
+            </div>
+
+            <div class="chat-tools">
+              <button class="icon-btn" title="جست‌وجو در گفتگو">⌕</button>
+              <button class="icon-btn" title="تماس صوتی">♧</button>
+              <button class="icon-btn" title="تماس تصویری">▣</button>
+              <button class="icon-btn" id="contactInfo" title="اطلاعات مخاطب">ⓘ</button>
+              <button class="icon-btn" title="بیشتر">•••</button>
+            </div>
+          </div>
+
+          <div class="chat-banner">
+            <span>✦</span>
+            <span>این فضا فقط برای تو و سارا ساخته شده</span>
+            <button id="chatAppearance">شخصی‌سازی گفتگو</button>
+          </div>
+
+          <div class="messages-area" id="messagesArea">
+
+            <div class="date-divider">
+              <span>امروز، ۱۸ آبان</span>
+            </div>
+
+            <div class="message-row incoming">
+              <div class="bubble">
+                <p>سلام دونیا جان! خوبی؟ 💗</p>
+                <div class="bubble-foot">
+                  <time>۱۰:۳۶</time>
+                  <button class="reaction-trigger">☺</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="message-row outgoing">
+              <div class="bubble">
+                <p>سلام عزیزم، مرسییی! تو خوبی؟</p>
+                <div class="bubble-foot">
+                  <time>۱۰:۳۸</time>
+                  <span class="read-ticks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="message-row incoming">
+              <div class="bubble">
+                <p>اون تم جدیدی که گفتی رو دیدی؟ به نظرم ترکیب رنگش فوق‌العاده‌ست ✨</p>
+                <div class="bubble-foot">
+                  <time>۱۰:۴۰</time>
+                  <button class="reaction-trigger">☺</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="message-row outgoing">
+              <div class="bubble">
+                <p>آرههه! مخصوصاً افکت Cherry Moments رو خیلی دوست دارم 🌸</p>
+                <div class="bubble-foot">
+                  <time>۱۰:۴۱</time>
+                  <span class="read-ticks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="message-row incoming">
+              <div class="bubble">
+                <p>اون تم جدید رو دیدی؟ خیلی قشنگه ✨</p>
+                <div class="bubble-foot">
+                  <time>۱۰:۴۲</time>
+                  <button class="reaction-trigger">☺</button>
+                </div>
+                <div class="reactions">
+                  <span>💗 1</span>
+                  <span>✨ 1</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="typing-indicator" id="typingIndicator" hidden>
+            <span></span><span></span><span></span>
+            <small>سارا در حال نوشتن...</small>
+          </div>
+
+          <div class="composer-wrap">
+
+            <div class="reply-preview" id="replyPreview" hidden>
+              <span>در پاسخ به پیام</span>
+              <button id="clearReply">×</button>
+            </div>
+
+            <div class="composer">
+              <button class="composer-tool" id="attachBtn" title="پیوست">＋</button>
+              <button class="composer-tool" id="emojiBtn" title="ایموجی">☺</button>
+
+              <textarea id="messageInput" rows="1" placeholder="پیامت رو بنویس..."></textarea>
+
+              <button class="composer-tool" id="voiceBtn" title="پیام صوتی">♬</button>
+              <button class="send-btn" id="sendBtn" title="ارسال">➤</button>
+            </div>
+
+            <div class="composer-hint">
+              <span>Enter برای ارسال · Shift + Enter برای خط جدید</span>
+              <span>VIANA <b>PRIVATE SPACE</b></span>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- CONTACT DETAILS -->
+
+        <aside class="details-panel panel" id="detailsPanel">
+
+          <div class="details-top">
+            <span class="eyebrow">CONTACT SPACE</span>
+            <button class="icon-btn" id="closeDetails">×</button>
+          </div>
+
+          <div class="profile-hero">
+            <div class="avatar a-rose xlarge">س<span class="online"></span></div>
+            <h2 id="detailName">سارا محمدی</h2>
+            <p>@sara.m · <span class="online-text">آنلاین</span></p>
+
+            <div class="profile-actions">
+              <button class="soft-btn">پیام</button>
+              <button class="soft-btn">تماس</button>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <span class="detail-label">درباره من</span>
+            <p>زندگی کوتاه‌تر از اونه که قهوه‌ات رو سرد بخوری ☕✨</p>
+          </div>
+
+          <div class="detail-card">
+            <span class="detail-label">اطلاعات</span>
+            <div class="detail-row">
+              <span>VIANA ID</span>
+              <b>viana.sara</b>
+            </div>
+            <div class="detail-row">
+              <span>عضویت از</span>
+              <b>اردیبهشت ۱۴۰۵</b>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <span class="detail-label">رسانه‌های مشترک</span>
+            <div class="media-grid">
+              <div>🌸</div><div>📷</div><div>🎀</div><div>🌅</div>
+            </div>
+          </div>
+
+          <button class="danger-link">مسدود کردن مخاطب</button>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- WORLD -->
+
+    <section class="page" id="page-world">
+      <div class="page-scroll">
+
+        <div class="hero-card world-hero">
+          <div>
+            <p class="eyebrow">A LITTLE UNIVERSE</p>
+            <h1>VIANA <em>World</em></h1>
+            <p>جایی برای کشف، الهام و پیدا کردن آدم‌های هم‌مسیر.</p>
+
+            <div class="hero-search">
+              <span>⌕</span>
+              <input placeholder="دنبال چه چیزی می‌گردی؟">
+              <button>کشف کن</button>
+            </div>
+          </div>
+
+          <div class="orbit-art">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit-core">v</div>
+            <i>✦</i>
+            <b>♡</b>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">DISCOVER SOMETHING NEW</p>
+            <h2>برای تو انتخاب کردیم</h2>
+          </div>
+          <button class="text-action">مشاهده همه ←</button>
+        </div>
+
+        <div class="world-grid">
+
+          <article class="world-card world-card-pink">
+            <div class="world-card-art">✿</div>
+            <span class="tag">جامعه خلاق</span>
+            <h3>دخترهای خلاق</h3>
+            <p>ایده‌ها، تجربه‌ها و حال خوب رو با هم به اشتراک بذاریم.</p>
+            <button class="outline-btn">پیوستن به جمع <span>←</span></button>
+          </article>
+
+          <article class="world-card world-card-lilac">
+            <div class="world-card-art">☾</div>
+            <span class="tag">سبک زندگی</span>
+            <h3>Slow Living Club</h3>
+            <p>برای لحظه‌های آروم، کتاب‌های خوب و زندگی آگاهانه.</p>
+            <button class="outline-btn">کشف انجمن <span>←</span></button>
+          </article>
+
+          <article class="world-card world-card-blue">
+            <div class="world-card-art">⌘</div>
+            <span class="tag">تکنولوژی</span>
+            <h3>کدنویس‌های فردا</h3>
+            <p>یادگیری، ساختن و رشد کردن کنار آدم‌های مشتاق.</p>
+            <button class="outline-btn">ورود به انجمن <span>←</span></button>
+          </article>
+
+        </div>
+
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">TRENDING NOW</p>
+            <h2>ترندهای این هفته</h2>
+          </div>
+        </div>
+
+        <div class="trend-row">
+          <span># طراحی_مینیمال</span>
+          <span># کتاب_این_هفته</span>
+          <span># ایده_های_خلاقانه</span>
+          <span># برنامه_نویسی</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MARKET -->
+
+    <section class="page" id="page-market">
+      <div class="page-scroll market-page">
+
+        <div class="market-topline">
+          <span class="market-logo">VIANA <b>MARKET</b></span>
+          <span class="market-note">انتخاب‌هایی با سلیقه تو ✦</span>
+        </div>
+
+        <div class="hero-card market-hero">
+          <div>
+            <p class="eyebrow">THE BOUTIQUE EXPERIENCE</p>
+            <h1>چیزهای قشنگ،<br><em>برای زندگی تو.</em></h1>
+            <p>از سازنده‌های مستقل خرید کن؛ خاص، دوست‌داشتنی و باکیفیت.</p>
+            <button class="pearl-btn" data-market-filter="all">
+              گشت‌وگذار در فروشگاه <span>←</span>
+            </button>
+          </div>
+
+          <div class="market-art">
+            <div class="market-sun"></div>
+            <div class="market-vase">✿</div>
+            <div class="market-stem">♧</div>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">CURATED FOR YOU</p>
+            <h2>ویترین منتخب</h2>
+          </div>
+          <button class="text-action">همه محصولات ←</button>
+        </div>
+
+        <div class="market-categories">
+          <button class="market-cat active" data-market-filter="all">همه</button>
+          <button class="market-cat" data-market-filter="art">هنر و دست‌ساز</button>
+          <button class="market-cat" data-market-filter="style">استایل</button>
+          <button class="market-cat" data-market-filter="digital">دیجیتال</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+          <article class="product-card" data-category="art">
+            <div class="product-image product-one">
+              <span class="product-badge">پرفروش</span>
+              <button class="heart-btn">♡</button>
+              <div class="product-illustration">✿</div>
+            </div>
+            <div class="product-info">
+              <span>استودیو لاله</span>
+              <h3>گلدان سرامیکی دست‌ساز</h3>
+              <div>
+                <b>۴۸۰٬۰۰۰ تومان</b>
+                <button class="add-cart">＋</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="style">
+            <div class="product-image product-two">
+              <button class="heart-btn">♡</button>
+              <div class="product-illustration">✧</div>
+            </div>
+            <div class="product-info">
+              <span>ماه‌دخت</span>
+              <h3>گردنبند مروارید مینیمال</h3>
+              <div>
+                <b>۳۲۰٬۰۰۰ تومان</b>
+                <button class="add-cart">＋</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="digital">
+            <div class="product-image product-three">
+              <span class="product-badge">جدید</span>
+              <button class="heart-btn">♡</button>
+              <div class="product-illustration">▤</div>
+            </div>
+            <div class="product-info">
+              <span>استودیو کاغذی</span>
+              <h3>پلنر دیجیتال روزانه</h3>
+              <div>
+                <b>۱۵۰٬۰۰۰ تومان</b>
+                <button class="add-cart">＋</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="art">
+            <div class="product-image product-four">
+              <button class="heart-btn">♡</button>
+              <div class="product-illustration">☼</div>
+            </div>
+            <div class="product-info">
+              <span>خانه آفتاب</span>
+              <h3>شمع دست‌ساز وانیلی</h3>
+              <div>
+                <b>۲۱۰٬۰۰۰ تومان</b>
+                <button class="add-cart">＋</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="seller-banner">
+          <div>
+            <span class="eyebrow">MADE BY YOU</span>
+            <h2>تو هم چیزی برای عرضه داری؟</h2>
+            <p>فروشگاه خودت رو در VIANA Market بساز.</p>
+          </div>
+          <button class="pearl-btn">شروع فروشندگی ←</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+
+    <section class="page" id="page-settings">
+
+      <div class="settings-layout">
+
+        <aside class="settings-nav panel">
+
+          <p class="eyebrow">YOUR CONTROL ROOM</p>
+          <h1>تنظیمات</h1>
+
+          <div class="settings-user">
+            <div class="my-avatar big">D</div>
+            <div>
+              <b>دنیا</b>
+              <small>viana.donya · حساب شخصی</small>
+            </div>
+          </div>
+
+          <button class="settings-link active" data-setting="appearance"><span>◐</span> ظاهر و شخصی‌سازی</button>
+          <button class="settings-link" data-setting="account"><span>♙</span> حساب کاربری</button>
+          <button class="settings-link" data-setting="privacy"><span>◈</span> حریم خصوصی</button>
+          <button class="settings-link" data-setting="security"><span>⌑</span> امنیت</button>
+          <button class="settings-link" data-setting="notifications"><span>♧</span> اعلان‌ها</button>
+          <button class="settings-link" data-setting="chats"><span>▤</span> گفتگوها</button>
+          <button class="settings-link" data-setting="storage"><span>▦</span> داده و حافظه</button>
+          <button class="settings-link" data-setting="language"><span>文</span> زبان و دسترس‌پذیری</button>
+          <button class="settings-link" data-setting="icons"><span>✧</span> مجموعه آیکون‌ها</button>
+
+          <div class="settings-nav-bottom">
+            VIANA <span>نسخه نمایشی ۱.۰</span>
+          </div>
+
+        </aside>
+
+        <section class="settings-content panel" id="settingsContent"></section>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal panel">
+    <div class="modal-head">
+      <h2 id="modalTitle">عنوان</h2>
+      <button class="icon-btn" id="modalClose">×</button>
+    </div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="session.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

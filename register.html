@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#120910">
+  <title>ساخت حساب | VIANA</title>
+  <link rel="stylesheet" href="register-viana.css">
+  <script src="register-viana.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="register-card" aria-labelledby="pageTitle">
+      <a class="brand" href="login.html" aria-label="VIANA">
+        <span class="brand-mark">V</span>
+        <span>VIANA</span>
+      </a>
+
+      <div class="intro">
+        <span class="eyebrow">به دنیای ویانا خوش آمدی</span>
+        <h1 id="pageTitle">ساخت حساب کاربری</h1>
+        <p>حساب خودت را بساز و به تجربه یکپارچه VIANA بپیوند.</p>
+      </div>
+
+      <form id="registerForm" novalidate>
+        <label for="registerName">نام کاربری</label>
+        <input id="registerName" name="username" type="text" autocomplete="username"
+               placeholder="مثلاً donya_2026" minlength="3" maxlength="30" required>
+        <small class="hint">۳ تا ۳۰ کاراکتر؛ فقط حروف انگلیسی، عدد، نقطه و زیرخط.</small>
+
+        <label for="registerPassword">رمز عبور</label>
+        <div class="password-wrap">
+          <input id="registerPassword" name="password" type="password"
+                 autocomplete="new-password" placeholder="حداقل ۸ کاراکتر" minlength="8" required>
+          <button class="reveal" type="button" data-toggle="registerPassword">نمایش</button>
+        </div>
+
+        <label for="confirmPassword">تکرار رمز عبور</label>
+        <div class="password-wrap">
+          <input id="confirmPassword" type="password" autocomplete="new-password"
+                 placeholder="رمز عبور را دوباره وارد کن" required>
+          <button class="reveal" type="button" data-toggle="confirmPassword">نمایش</button>
+        </div>
+
+        <div class="captcha-heading">
+          <label for="captchaInput">کد امنیتی</label>
+          <div class="captcha" aria-live="polite">
+            <strong id="captchaCode">-----</strong>
+            <button id="refreshCaptcha" type="button" title="ساخت کد جدید" aria-label="ساخت کد جدید">↻</button>
+          </div>
+        </div>
+        <input id="captchaInput" type="text" inputmode="text" maxlength="5"
+               autocomplete="off" placeholder="کد پنج‌کاراکتری را وارد کن" required>
+
+        <label class="policy-row">
+          <input id="acceptPolicy" type="checkbox">
+          <span>قوانین استفاده و سیاست حریم خصوصی VIANA را می‌پذیرم.</span>
+        </label>
+
+        <button id="registerBtn" class="submit-btn" type="submit">
+          <span class="btn-label">ساخت حساب</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+        <p id="formMessage" class="message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="bottom-link">
+        قبلاً حساب ساخته‌ای؟ <a href="login.html">ورود به حساب</a>
+      </div>
+      <p class="footnote">با ساخت حساب، اطلاعات ورودت برای احراز هویت به سرور VIANA ارسال می‌شود.</p>
+    </section>
+  </main>
+</body>
+</html>
