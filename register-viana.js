@@ -1,6 +1,6 @@
 (() => {
   "use strict";
-  const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://viana-api.onrender.com";
   const $ = id => document.getElementById(id);
   const form = $("registerForm");
   const button = $("registerBtn");
